@@ -86,7 +86,33 @@ function buildGamesLookupMap(games) {
   }
 }
 function normalizeGameName(name) {
-  return name.toLowerCase()
+  // Convert Roman numerals to numbers first
+  const romanToNum = {
+    ' i ': ' 1 ',
+    ' ii ': ' 2 ',
+    ' iii ': ' 3 ',
+    ' iv ': ' 4 ',
+    ' v ': ' 5 ',
+    ' vi ': ' 6 ',
+    ' vii ': ' 7 ',
+    ' viii ': ' 8 ',
+    ' ix ': ' 9 ',
+    ' x ': ' 10 ',
+    ' xi ': ' 11 ',
+    ' xii ': ' 12 ',
+    ' xiii ': ' 13 ',
+    ' xiv ': ' 14 ',
+    ' xv ': ' 15 ',
+  }
+  
+  let normalized = ' ' + name.toLowerCase() + ' '
+  
+  // Replace Roman numerals
+  for (const [roman, num] of Object.entries(romanToNum)) {
+    normalized = normalized.replace(new RegExp(roman, 'g'), num)
+  }
+  
+  return normalized
     .replace(/[®™©]/g, '') // Remove trademark symbols
     .replace(/[^a-z0-9]/g, '') // Remove special chars
     .trim()
