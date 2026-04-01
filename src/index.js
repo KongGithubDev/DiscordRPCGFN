@@ -46,8 +46,8 @@ const checkAndUpdateGame = async () => {
       const activityWithGame = buildActivityWithGame(currentGame, imageUrl)
       updateActivity(activityWithGame)
     } else {
-      logger.info('No game detected, using default activity')
-      updateRichPresence()
+      logger.info('No game detected, clearing Rich Presence')
+      client.user?.clearActivity()
     }
   }
 }
