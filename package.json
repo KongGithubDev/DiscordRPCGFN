@@ -1,0 +1,30 @@
+{
+  "name": "discord-rpc-gfn",
+  "version": "1.0.0",
+  "description": "Discord Rich Presence with GeForce NOW game detection - displays games you're playing with automatic artwork",
+  "homepage": "https://github.com/KongGithubDev/DiscordRPCGFN#readme",
+  "bugs": {
+    "url": "https://github.com/KongGithubDev/DiscordRPCGFN/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KongGithubDev/DiscordRPCGFN.git"
+  },
+  "license": "ISC",
+  "author": "Watcharapong Namsaeng (KongGithubDev)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.3.0",
+    "dotenv": "^17.3.1",
+    "joi": "^17.13.3",
+    "node-window-manager": "^2.2.4"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "prettier": "^3.4.2"
+  }
+}
