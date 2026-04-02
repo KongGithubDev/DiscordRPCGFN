@@ -234,6 +234,8 @@ const initialiseWithGameDetection = async () => {
 
     // Connect to Discord since game is running
     connectToDiscord()
+    // Also start game detection to monitor for game exit
+    startGameDetection()
   } else {
     logger.info('No game detected at startup, waiting for game to start...')
     startGameDetection()
